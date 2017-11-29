@@ -1,0 +1,14 @@
+@charset "UTF-8";
+
+/* 为什么要设置这个 */
+
+.bgBody {
+    background-color: #222d32
+}
+
+.mt150 {
+    margin-top: 150px;
+}
+.panel h4 {
+    text-align: center;
+}
