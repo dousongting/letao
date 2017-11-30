@@ -66,32 +66,122 @@
                 </li>
                 <li class="active">商品管理</li>
             </ol>
+            <div class="content">
+                <!-- 用户信息的表格 -->
+                <table class="table table-bordered table-hover">
+                    <thead>
+                        <tr>
+                            <td width="10%">序号</td>
+                            <td width="30%">用户名</td>
+                            <td width="30%">手机号</td>
+                            <td width="20%">状态</td>
+                            <td width="10%">操作</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- 挖个坑 -->
+                    </tbody>
+                </table>
+            </div>
         </div>
-        <div class="content">
-            <div class="content-L pull-left">
-                11
-            </div>
-            <div class="content-R pull-right">
-                22
+        
 
-            </div>
 
+
+
+
+
+
+
+        <!-- 分页   盒子的讲究 -->
+        <div class="text-right">
+            <ul id="paginator">
+                
+            </ul>
         </div>
 
     </div>
+  
 
 
 
+<!--退出功能 模态框 -->
+<div class="modal fade bs-example-modal-sm" id="logoutModal">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title" id="myModalLabel">温馨提示</h4>
+            </div>
+            <div class="modal-body">
+                <p class="text-danger">
+                    <span class="glyphicon glyphicon-info-sign"></span>
+                    您确定要退出后台管理系统吗？
+                </p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                <button type="button" class="btn btn-primary btn-logout">退出</button>
+            </div>
+        </div>
+    </div>
+</div>
 
+<!-- 操作模态框 -->
+<div class="modal fade bs-example-modal-sm" id="userModal">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title" id="myModalLabel">温馨提示</h4>
+            </div>
+            <div class="modal-body">
+                <p class="text-danger">
+                    <span class="glyphicon glyphicon-info-sign"></span>
+                    您确定要执行此操作吗？
+                </p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                <button type="button" class="btn btn-primary btn-sure">确定</button>
+            </div>
+        </div>
+    </div>
 
-
-
+    <!-- 模板引擎 -->
+    <script type="text/html" id="tpl">
+        {{each rows v i}}
+        <tr>
+            <!-- 第一页 page = 1  - 1 = 0  *size = 5  i = 0  +1 = 1-->
+          <td>{{(page-1)*size+i+1}}</td>
+          <td>{{v.username}}</td>
+          <td>{{v.mobile}}</td>
+          <td>{{v.isDelete === 1 ? "正常":"禁用"}}</td>
+          <!-- 1 是正常   0 是禁用 -->
+          <td data-id="{{v.id}}">
+              {{if v.isDelete === 1}}
+              <button class="btn btn-danger btn-sm">禁用</button>
+              {{else if v.isDelete === 0}}
+              <button class="btn btn-success btn-sm">启用</button>
+              {{/if}}
+          </td>
+         </tr>
+        {{/each}}
+    </script>
 
     <!-- 引包 -->
     <script src="lib/jquery/jquery.js"></script>
     <script src="lib/bootstrap/js/bootstrap.js"></script>
+    <!-- 分页插件 -->
+    <script src="lib/bootstrap-paginator/bootstrap-paginator.js"></script>
     <script src="lib/bootstrap-validator/js/bootstrapValidator.js"></script>
     <script src="lib/nprogress/nprogress.js"></script>
+    <!-- 模板引擎的包 -->
+    <script src="lib/artTemplate/template-web.js"></script>
     <script src="js/common.js"></script>
     <script src="js/user.js"></script>
 </body>
