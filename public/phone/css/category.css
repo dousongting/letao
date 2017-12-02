@@ -1,0 +1,53 @@
+.lt-category-l {
+    width: 90px;
+    height: 100%;
+    float: left;
+    position: relative;
+    overflow: hidden;
+}
+
+.lt-category-l a {
+    display: block;
+    width: 90px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    font-size: 16px;
+    border-right: 1px solid red;
+    border-bottom: 1px solid red;
+    background-color: pink;
+}
+
+.lt-category-l li.now a {
+    background-color: #fff;
+    border-right: none;
+}
+
+.lt-category-r {
+    overflow: hidden;
+    height: 100%;
+    position: relative;
+}
+
+.lt-category-r li {
+    float: left;
+    width: 33.33%;
+}
+
+.lt-category-r li img {
+    display: block;
+    margin: 0 auto;
+    width: 62px;
+    height: 62px;
+}
+
+.lt-category-r li p {
+    text-align: center;
+    font-size: 14px;
+    color: #cccccc;
+}
+.tips {
+    text-indent:  15px;
+    color: #999;
+    margin-top: 10px;
+}

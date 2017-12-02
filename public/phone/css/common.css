@@ -1,0 +1,147 @@
+/* 公共样式 */
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+
+/* 样式初始化 */
+
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.lt-container {
+    width: 100%;
+    height: 100%;
+    background-color: pink;
+    /* 子绝父相 */
+    position: relative;
+    padding: 45px 0 55px 0;
+}
+
+.lt-header {
+    width: 100%;
+    height: 45px;
+    background-color: #069;
+    position: absolute;
+    top: 0;
+}
+
+.lt-header .icon-left {
+    width: 45px;
+    height: 45px;
+    line-height: 45px;
+    text-align: center;
+    color: #fff;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.lt-header .icon-right {
+    width: 45px;
+    height: 45px;
+    line-height: 45px;
+    text-align: center;
+    color: #fff;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.lt-header h4 {
+    font-weight: 400;
+    line-height: 45px;
+    margin: 0;
+    text-align: center;
+    color: #fff;
+}
+
+.lt-footer {
+    width: 100%;
+    height: 55px;
+    background-color: #069;
+    position: absolute;
+    bottom: 0;
+    overflow: hidden;
+}
+
+.lt-footer li {
+    width: 25%;
+    float: left;
+    padding-top: 10px;
+    text-align: center;
+}
+
+.lt-footer li a {
+    color: #fff;
+}
+
+.lt-footer li p {
+    color: #fff;
+    font-size: 12px;
+}
+
+.lt-footer li a.now {
+    color: darkorange;
+}
+
+.lt-footer li p.now {
+    color:darkorange;
+}
+.lt-main {
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    position: relative;
+}
+
+
+/* 产品 */
+
+.lt-product {
+    padding: 10px;
+}
+
+.lt-product .item {
+    float: left;
+    width: 48%;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+    padding: 10px;
+    text-align: center;
+}
+
+
+/* 给奇数的margin-right 4% */
+
+.lt-product .item:nth-child(odd) {
+    margin-right: 4%;
+}
+
+.lt-product img {
+    width: 100%;
+    height: 100%;
+}
+
+.lt-product p {
+    text-align: center;
+}
+
+.lt-product button {
+    display: block;
+    margin: 0 auto;
+}
+
+.lt-product .price {
+    color: red;
+}
+
+.lt-product .oldPrice {
+    text-decoration: line-through;
+}
