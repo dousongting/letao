@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0  user-scalable=0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>乐淘商城-搜索页</title>
+    <!-- 图标 -->
+    <link rel="icon" href="favicon.ico">
+    <!-- 引包 -->
+    <link rel="stylesheet" href="lib/mui/css/mui.css">
+    <link rel="stylesheet" href="lib/fa/css/font-awesome.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/search.css">
+
+</head>
+
+<body>
+    <!-- 容器 -->
+    <div class="lt-container">
+        <!-- 头部 -->
+        <div class="lt-header">
+            <a href="javascript:history.go(-1);" class="icon-left">
+                <span class="mui-icon mui-icon-back"></span>
+            </a>
+            <h4>搜索中心</h4>
+            <a href="search.html" class="icon-right">
+                <span class="fa fa-search"></span>
+            </a>
+        </div>
+        <!-- 主体 -->
+        <div class="lt-main">
+            <!-- 滚动容器 -->
+            <!-- 
+                    注意：使用mui的区域滚动，必须使用这两个类
+                    mui-scroll-wrapper：父容器, 大小和父盒子一样大
+                    mui-scroll:子容器，宽度100%，高度由内容撑开，
+                    如果自容器的高度没有父容器的高度，没有滚动效果
+                  -->
+            <div class="mui-scroll-wrapper">
+                <div class="mui-scroll">
+                    <!-- 搜索框 -->
+                    <div class="lt-search">
+                        <input type="text" placeholder="请输入搜索关键字" class="search-input">
+                        <button class="mui-btn mui-btn-blue search-btn">搜索</button>
+                    </div>
+                    <!-- 历史纪录 -->
+                    <div class="lt-history">
+                        <!-- 挖一个坑 -->
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!-- 底部 -->
+        <div class="lt-footer">
+            <ul>
+                <li>
+                    <a href="index.html">
+                        <span class="fa fa-home"></span>
+                        <p>首页</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="category.html">
+                        <span class="fa fa-bars"></span>
+                        <p>分类</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="cart.html">
+                        <span class="fa fa-shopping-cart"></span>
+                        <p>购物车</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="user.html">
+                        <span class="fa fa-user"></span>
+                        <p>会员中心</p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- 模板引擎 -->
+    <script type="text/html" id="tpl">
+      {{if list.length === 0}}
+      <div class="tips">
+        暂时没有更多的商品信息
+      </div>
+      {{/if}}
+      {{if list.length > 0}}
+        <div class="title mui-clearfix">
+            <span class="mui-pull-left">搜索历史</span>
+            <span class="mui-pull-right fa fa-trash btn_empty">清空记录</span>
+        </div>
+        <div class="content">
+           <ul>
+             {{each list v i}}
+                <li class="mui-clearfix">
+                    <a href="productList.html?key={{v}}" class="mui-pull-left">{{v}}</a>
+                    <span data-index="{{i}}" class="mui-icon mui-icon-closeempty mui-pull-right btn_delete"></span>
+                </li>
+             {{/each}}   
+            </ul>
+        </div>
+      {{/if}}
+    </script>
+    <!-- 引包 -->
+    <script src="lib/mui/js/mui.js"></script>
+    <script src="lib/artTemplate/template-web.js"></script>
+    <script src="lib/zepto/zepto.min.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/search.js"></script>
+</body>
+
+</html>
