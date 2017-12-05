@@ -1,0 +1,80 @@
+.lt-container {
+    padding-bottom: 85px;
+}
+
+.img-box {
+    float: left;
+}
+
+.img-box img {
+    width: 60px;
+    height: 60px;
+}
+
+.ck {
+    position: absolute;
+    bottom: 4px;
+    left: 4px;
+}
+
+.info-box {
+    overflow: hidden;
+    padding-left: 10px;
+}
+
+.info-box .num {
+    right: 10px;
+}
+
+.proName {
+    color: #333;
+    height: 42px;
+}
+
+.price {
+    color: red;
+}
+
+.oldPrice {
+    text-decoration: line-through;
+}
+
+.lt_total {
+    position: absolute;
+    bottom: 55px;
+    font-size: 12px;
+    z-index: 998;
+    background-color: #eee;
+    height: 30px;
+    line-height: 30px;
+    width: 100%;
+    padding: 0 10px;
+    color: red;
+}
+
+.lt_total a {
+    padding: 0 15px;
+    background-color: red;
+    color: #fff;
+}
+
+.mui-table-cell {
+    display: block;
+}
+
+.lt_edit_size,
+.lt_edit_num {
+    text-align: left;
+}
+
+.lt_edit_size span {
+    font-size: 12px;
+    padding: 5px;
+    background-color: #f5f5f5;
+    border: 1px solid #ccc;
+    line-height: 30px;
+}
+
+.lt_edit_size span.now {
+    background-color: #069;
+}

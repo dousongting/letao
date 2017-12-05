@@ -24,6 +24,9 @@
     font-size: 12px;
     line-height: 30px;
 }
+.lt-pro-size span.now{
+    background-color: #069;
+}
 .lt-cart {
     padding: 10px ;
     border-top:1px solid red;
